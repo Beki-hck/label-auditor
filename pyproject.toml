@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "label-auditor"
+version = "0.1.0"
+description = "Find likely mislabeled examples in a dataset using model disagreement and confident learning"
+requires-python = ">=3.10"
+dependencies = ["numpy", "scikit-learn"]
+
+[project.optional-dependencies]
+images = ["torch", "torchvision", "pillow"]
+dev = ["pytest", "cleanlab"]
+
+[project.scripts]
+label-auditor = "label_auditor.cli:main"
+
+[tool.setuptools]
+packages = ["label_auditor"]
